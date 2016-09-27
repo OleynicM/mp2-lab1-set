@@ -28,7 +28,7 @@ TBitField::TBitField(const TBitField &bf) // конструктор копиро
 
 TBitField::~TBitField()
 {
-	delete[] Mem;;
+	delete[] Mem;
 }
 
 int TBitField::GetMemIndex(const int n) const // индекс Мем для бита n
