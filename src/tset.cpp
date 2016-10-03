@@ -76,8 +76,20 @@ TSet TSet::operator+(const TSet &s) // объединение
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
+		if ((Elem > -1) && (Elem < MaxPower))
+		{
+			int t;
+			TSet temp(MaxPower);
+			for (int i = 0; i < MaxPower; i++) {
+				t = IsMember(i);
+				temp.InsElem(i);
+			}
+			temp.InsElem(Elem);
+			return temp;
+		}
+		else throw "Error";
+	}
 
-}
 
 TSet TSet::operator-(const int Elem) // разность с элементом
 {
