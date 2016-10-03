@@ -41,10 +41,11 @@ int TSet::IsMember(const int Elem) const // элемент множества?
 void TSet::InsElem(const int Elem) // включение элемента множества
 {
 	BitField.SetBit(Elem);
+	//throw "Error";
 }
 
 void TSet::DelElem(const int Elem) // исключение элемента множества
-{
+{ 
 	BitField.ClrBit(Elem);
 }
 
@@ -75,14 +76,13 @@ TSet TSet::operator+(const TSet &s) // объединение
 
 TSet TSet::operator+(const int Elem) // объединение с элементом
 {
-	TSet Obwe(BitField | TSet(Elem));
-	return Obwe;
+
 }
 
 TSet TSet::operator-(const int Elem) // разность с элементом
 {
-	/*TSet perwe(BitField & TSet(~Elem));
-	return perwe;*/
+	TSet perwe(BitField & TSet(Elem));
+	return perwe;
 }
 
 TSet TSet::operator*(const TSet &s) // пересечение
