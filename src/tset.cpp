@@ -82,6 +82,7 @@ TSet TSet::operator+(const int Elem) // объединение с элемент
 			TSet temp(MaxPower);
 			for (int i = 0; i < MaxPower; i++) {
 				t = IsMember(i);
+				if (t == 1)
 				temp.InsElem(i);
 			}
 			temp.InsElem(Elem);
